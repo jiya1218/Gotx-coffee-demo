@@ -151,23 +151,49 @@ h3 { font-size: 1.5rem; }
 }
 .site-header.is-scrolled .nav { background: rgba(18, 14, 12, 0.94); border-color: rgba(197, 160, 89, 0.35); }
 .site-header.is-hidden .nav { transform: translateY(-150%); }
-.logo { display: inline-flex; align-items: center; gap: .6rem; color: #fff; text-decoration: none; }
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+}
 .logo-img {
-  height: clamp(38px, 4.2vw, 46px);
+  height: clamp(34px, 3.8vw, 42px);
   width: auto;
-  max-width: 170px;
+  max-width: 160px;
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 2px 8px rgba(216, 169, 78, 0.25));
   transition: transform .35s var(--spring), filter .35s var(--ease);
 }
+.logo-partner {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-pale);
+  opacity: 0.85;
+  margin-top: 3px;
+  white-space: nowrap;
+  transition: color 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+.logo:hover .logo-partner {
+  color: #fff;
+  opacity: 1;
+}
 .logo:hover .logo-img {
-  transform: scale(1.04);
+  transform: scale(1.03);
   filter: drop-shadow(0 4px 14px rgba(216, 169, 78, 0.45));
 }
 .logo-img--footer {
-  height: clamp(44px, 5vw, 56px);
-  max-width: 200px;
+  height: clamp(40px, 4.5vw, 50px);
+  max-width: 190px;
+}
+.logo-partner--footer {
+  font-size: 0.64rem;
+  margin-top: 4px;
 }
 .logo svg { width: 34px; height: 26px; color: var(--gold); transition: transform .5s var(--spring); }
 .logo:hover svg { transform: translateY(-3px) rotate(-6deg); }
